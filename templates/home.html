@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Pagina principal</h1>
+
+    <form method="post">
+        <label for="">agregar una tarea</label>
+        <input type="text" name="actividad">
+        <input type="submit" value="agregar">
+
+        <h3>Lista de actividades</h3>
+        <ul>
+            {% for tarea in tareas %}
+                <li><a href="/delete/{{ tarea['id'].decode()[35:45] }}">{{ tarea['tarea'] }}</a> </li>
+            {% endfor %}
+        </ul>
+        
+    </form>
+</body>
+</html>
